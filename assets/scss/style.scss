@@ -91,8 +91,10 @@ h2 {
 
 // HOME Page
 body#home {
+
     #header {
         position: absolute;
+        transition: all 0.5s;
 
         width: 100%;
         z-index: 1000;
@@ -128,6 +130,9 @@ body#home {
             top: 0;
             background-color: #333;
             /* fərqli rəng scroll zamanı */
+            &::after {
+                background-image: none;
+            }
         }
 
         nav ul li a {
@@ -164,34 +169,6 @@ body#home {
                 font-weight: 700;
                 font-style: normal;
                 font-size: 4rem;
-            }
-
-            h5 {
-
-                a {
-                    display: inline-block;
-                    position: relative;
-                    text-align: center;
-                    height: 55px;
-                    line-height: 53px;
-                    padding: 0 20px;
-                    border: 1px solid #EF0031;
-                    background: #EF0031;
-                    border-radius: 3px;
-                    color: white;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        height: 4px;
-                        background: #1F8330;
-
-                    }
-                }
-
             }
 
             div::after {
@@ -256,15 +233,25 @@ body#home {
                 position: relative;
                 text-align: center;
 
+                h5,
+                h6 {
+                    margin-top: 20px;
+                }
+
+                h4 {
+                    margin-top: 10px;
+                }
+
                 .ribbon-cont {
                     display: inline-block;
                     padding: 0px 30px 0px 20px;
                     position: absolute;
-                    top: 35%;
-                    left: 4px;
+                    top: 25%;
+                    left: 34px;
                     z-index: 1;
                     line-height: 30px;
                     font-size: 1.07em;
+                    margin-top: 0px;
 
                     .ribbon {
                         position: absolute;
@@ -286,14 +273,6 @@ body#home {
 
                 }
 
-                h5, h6 {
-                    margin-top: 20px;
-                }
-
-                h4 {
-                    margin-top: 10px;
-                }
-
             }
 
             h6 {
@@ -302,5 +281,95 @@ body#home {
                 margin-bottom: 30px;
             }
         }
+
+        section#our_menu {
+
+            ul {
+
+                margin-bottom: 70px;
+                border-bottom: 2px solid #EF0031;
+                gap: 5px;
+
+                a {
+                    padding: 15px 30px;
+                    color: #333;
+                    transition: all 0.5s;
+
+                    &.active,
+                    &:hover {
+                        border-radius: 3px 3px 0 0;
+                        background: #EF0031;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+
+            .menu_item {
+                gap: 20px;
+                margin-bottom: 30px;
+
+                .menu_item_img {
+                    width: 90px;
+                    height: 90px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .menu_item_info {
+                    width: 80%;
+
+                    h5 {
+                        font-size: 0.8rem;
+                        margin-bottom: 10px;
+
+                        &>b:last-child {
+                            color: #EF0031;
+                        }
+                    }
+
+                    p {
+                        padding-right: 4rem;
+                        line-height: 1.7;
+                        font-size: 1.2em;
+                        font-weight: 400;
+                        color: #555;
+                    }
+                }
+            }
+
+            h6 {
+                text-align: center;
+                margin-top: 40px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+footer {
+    height: 70vh;
+    background: url('https://preview.colorlib.com/theme/luigis/images/footer_1600x800.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    color: white;
+
+    &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        background: rgba(0, 0, 0, 0.7);
     }
 }
